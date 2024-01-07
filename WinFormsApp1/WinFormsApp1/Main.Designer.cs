@@ -31,12 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             comboBox1 = new ComboBox();
             label1 = new Label();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
-            button5 = new Button();
-            button6 = new Button();
+            login_button = new Button();
+            reservation_button = new Button();
+            game_button = new Button();
+            board_button = new Button();
+            search_button = new Button();
+            mypage_button = new Button();
             pictureBox1 = new PictureBox();
             label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -62,71 +62,71 @@
             label1.Text = "예약 TOP5";
             label1.Click += label1_Click;
             // 
-            // button1
+            // login_button
             // 
-            button1.AutoSize = true;
-            button1.Location = new Point(34, 282);
-            button1.Name = "button1";
-            button1.Size = new Size(83, 29);
-            button1.TabIndex = 2;
-            button1.Text = "로그인";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            login_button.AutoSize = true;
+            login_button.Location = new Point(34, 282);
+            login_button.Name = "login_button";
+            login_button.Size = new Size(83, 29);
+            login_button.TabIndex = 2;
+            login_button.Text = "로그인";
+            login_button.UseVisualStyleBackColor = true;
+            login_button.Click += button1_Click;
             // 
-            // button2
+            // reservation_button
             // 
-            button2.AutoSize = true;
-            button2.Location = new Point(479, 282);
-            button2.Name = "button2";
-            button2.Size = new Size(83, 29);
-            button2.TabIndex = 3;
-            button2.Text = "예약현황";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            reservation_button.AutoSize = true;
+            reservation_button.Location = new Point(479, 282);
+            reservation_button.Name = "reservation_button";
+            reservation_button.Size = new Size(83, 29);
+            reservation_button.TabIndex = 3;
+            reservation_button.Text = "예약현황";
+            reservation_button.UseVisualStyleBackColor = true;
+            reservation_button.Click += button2_Click;
             // 
-            // button3
+            // game_button
             // 
-            button3.AutoSize = true;
-            button3.Enabled = false;
-            button3.Location = new Point(390, 282);
-            button3.Name = "button3";
-            button3.Size = new Size(83, 29);
-            button3.TabIndex = 4;
-            button3.Text = "방탈출게임";
-            button3.UseVisualStyleBackColor = true;
+            game_button.AutoSize = true;
+            game_button.Enabled = false;
+            game_button.Location = new Point(390, 282);
+            game_button.Name = "game_button";
+            game_button.Size = new Size(83, 29);
+            game_button.TabIndex = 4;
+            game_button.Text = "방탈출게임";
+            game_button.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // board_button
             // 
-            button4.AutoSize = true;
-            button4.Enabled = false;
-            button4.Location = new Point(301, 282);
-            button4.Name = "button4";
-            button4.Size = new Size(83, 29);
-            button4.TabIndex = 5;
-            button4.Text = "게시판";
-            button4.UseVisualStyleBackColor = true;
+            board_button.AutoSize = true;
+            board_button.Enabled = false;
+            board_button.Location = new Point(301, 282);
+            board_button.Name = "board_button";
+            board_button.Size = new Size(83, 29);
+            board_button.TabIndex = 5;
+            board_button.Text = "게시판";
+            board_button.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // search_button
             // 
-            button5.AutoSize = true;
-            button5.Enabled = false;
-            button5.Location = new Point(212, 282);
-            button5.Name = "button5";
-            button5.Size = new Size(83, 29);
-            button5.TabIndex = 6;
-            button5.Text = "검색";
-            button5.UseVisualStyleBackColor = true;
+            search_button.AutoSize = true;
+            search_button.Enabled = false;
+            search_button.Location = new Point(212, 282);
+            search_button.Name = "search_button";
+            search_button.Size = new Size(83, 29);
+            search_button.TabIndex = 6;
+            search_button.Text = "검색";
+            search_button.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // mypage_button
             // 
-            button6.AutoSize = true;
-            button6.Enabled = false;
-            button6.Location = new Point(123, 282);
-            button6.Name = "button6";
-            button6.Size = new Size(83, 29);
-            button6.TabIndex = 7;
-            button6.Text = "마이페이지";
-            button6.UseVisualStyleBackColor = true;
+            mypage_button.AutoSize = true;
+            mypage_button.Enabled = false;
+            mypage_button.Location = new Point(123, 282);
+            mypage_button.Name = "mypage_button";
+            mypage_button.Size = new Size(83, 29);
+            mypage_button.TabIndex = 7;
+            mypage_button.Text = "마이페이지";
+            mypage_button.UseVisualStyleBackColor = true;
             // 
             // pictureBox1
             // 
@@ -134,10 +134,10 @@
             pictureBox1.Location = new Point(34, 47);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(528, 162);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 8;
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             // 
             // label2
             // 
@@ -157,12 +157,12 @@
             ClientSize = new Size(602, 342);
             Controls.Add(label2);
             Controls.Add(pictureBox1);
-            Controls.Add(button6);
-            Controls.Add(button5);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(mypage_button);
+            Controls.Add(search_button);
+            Controls.Add(board_button);
+            Controls.Add(game_button);
+            Controls.Add(reservation_button);
+            Controls.Add(login_button);
             Controls.Add(comboBox1);
             Controls.Add(label1);
             Name = "Main";
@@ -177,12 +177,12 @@
 
         private ComboBox comboBox1;
         private Label label1;
-        private Button button1;
-        private Button button2;
-        private Button button3;
-        private Button button4;
-        private Button button5;
-        private Button button6;
+        private Button login_button;
+        private Button reservation_button;
+        private Button game_button;
+        private Button board_button;
+        private Button search_button;
+        private Button mypage_button;
         private PictureBox pictureBox1;
         private Label label2;
     }

@@ -29,21 +29,21 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            NameTextBox = new TextBox();
+            IdTextBox = new TextBox();
             label2 = new Label();
-            textBox3 = new TextBox();
+            PwTextBox = new TextBox();
             label3 = new Label();
-            textBox4 = new TextBox();
+            PwCheckTextBox = new TextBox();
             label4 = new Label();
             label6 = new Label();
             label7 = new Label();
             label8 = new Label();
             label9 = new Label();
-            comboBox1 = new ComboBox();
-            comboBox2 = new ComboBox();
-            comboBox3 = new ComboBox();
+            DayCombo = new ComboBox();
             button1 = new Button();
+            MonthCombo = new ComboBox();
+            YearCombo = new ComboBox();
             SuspendLayout();
             // 
             // label1
@@ -55,21 +55,19 @@
             label1.TabIndex = 0;
             label1.Text = "이름";
             // 
-            // textBox1
+            // NameTextBox
             // 
-            textBox1.Location = new Point(108, 18);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(178, 23);
-            textBox1.TabIndex = 1;
-            textBox1.TextChanged += textBox1_TextChanged;
+            NameTextBox.Location = new Point(108, 18);
+            NameTextBox.Name = "NameTextBox";
+            NameTextBox.Size = new Size(183, 23);
+            NameTextBox.TabIndex = 1;
             // 
-            // textBox2
+            // IdTextBox
             // 
-            textBox2.Location = new Point(108, 47);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(178, 23);
-            textBox2.TabIndex = 3;
-            textBox2.TextChanged += textBox2_TextChanged;
+            IdTextBox.Location = new Point(108, 47);
+            IdTextBox.Name = "IdTextBox";
+            IdTextBox.Size = new Size(183, 23);
+            IdTextBox.TabIndex = 3;
             // 
             // label2
             // 
@@ -80,13 +78,12 @@
             label2.TabIndex = 2;
             label2.Text = "아이디";
             // 
-            // textBox3
+            // PwTextBox
             // 
-            textBox3.Location = new Point(108, 76);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(178, 23);
-            textBox3.TabIndex = 5;
-            textBox3.TextChanged += textBox3_TextChanged;
+            PwTextBox.Location = new Point(108, 76);
+            PwTextBox.Name = "PwTextBox";
+            PwTextBox.Size = new Size(183, 23);
+            PwTextBox.TabIndex = 5;
             // 
             // label3
             // 
@@ -97,13 +94,12 @@
             label3.TabIndex = 4;
             label3.Text = "비밀번호";
             // 
-            // textBox4
+            // PwCheckTextBox
             // 
-            textBox4.Location = new Point(108, 105);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(178, 23);
-            textBox4.TabIndex = 7;
-            textBox4.TextChanged += textBox4_TextChanged;
+            PwCheckTextBox.Location = new Point(108, 105);
+            PwCheckTextBox.Name = "PwCheckTextBox";
+            PwCheckTextBox.Size = new Size(183, 23);
+            PwCheckTextBox.TabIndex = 7;
             // 
             // label4
             // 
@@ -135,7 +131,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(225, 139);
+            label8.Location = new Point(228, 139);
             label8.Name = "label8";
             label8.Size = new Size(19, 15);
             label8.TabIndex = 14;
@@ -144,35 +140,23 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(288, 140);
+            label9.Location = new Point(291, 140);
             label9.Name = "label9";
             label9.Size = new Size(19, 15);
             label9.TabIndex = 16;
             label9.Text = "일";
             // 
-            // comboBox1
+            // DayCombo
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(108, 134);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(60, 23);
-            comboBox1.TabIndex = 17;
-            // 
-            // comboBox2
-            // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(188, 134);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(35, 23);
-            comboBox2.TabIndex = 18;
-            // 
-            // comboBox3
-            // 
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(250, 134);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(35, 23);
-            comboBox3.TabIndex = 19;
+            DayCombo.DropDownHeight = 90;
+            DayCombo.FormattingEnabled = true;
+            DayCombo.ImeMode = ImeMode.NoControl;
+            DayCombo.IntegralHeight = false;
+            DayCombo.ItemHeight = 15;
+            DayCombo.Location = new Point(250, 134);
+            DayCombo.Name = "DayCombo";
+            DayCombo.Size = new Size(41, 23);
+            DayCombo.TabIndex = 19;
             // 
             // button1
             // 
@@ -182,6 +166,33 @@
             button1.TabIndex = 20;
             button1.Text = "회원가입";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // MonthCombo
+            // 
+            MonthCombo.DropDownHeight = 90;
+            MonthCombo.FormattingEnabled = true;
+            MonthCombo.ImeMode = ImeMode.NoControl;
+            MonthCombo.IntegralHeight = false;
+            MonthCombo.ItemHeight = 15;
+            MonthCombo.Location = new Point(188, 134);
+            MonthCombo.Name = "MonthCombo";
+            MonthCombo.Size = new Size(41, 23);
+            MonthCombo.TabIndex = 18;
+            MonthCombo.SelectedIndexChanged += MonthCombo_SelectedIndexChanged;
+            // 
+            // YearCombo
+            // 
+            YearCombo.DropDownHeight = 90;
+            YearCombo.FormattingEnabled = true;
+            YearCombo.ImeMode = ImeMode.NoControl;
+            YearCombo.IntegralHeight = false;
+            YearCombo.ItemHeight = 15;
+            YearCombo.Location = new Point(108, 134);
+            YearCombo.Name = "YearCombo";
+            YearCombo.Size = new Size(60, 23);
+            YearCombo.TabIndex = 17;
+            YearCombo.SelectedIndexChanged += YearCombo_SelectedIndexChanged;
             // 
             // Register
             // 
@@ -189,23 +200,24 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(313, 222);
             Controls.Add(button1);
-            Controls.Add(comboBox3);
-            Controls.Add(comboBox2);
-            Controls.Add(comboBox1);
+            Controls.Add(DayCombo);
+            Controls.Add(MonthCombo);
+            Controls.Add(YearCombo);
             Controls.Add(label9);
             Controls.Add(label8);
             Controls.Add(label7);
             Controls.Add(label6);
-            Controls.Add(textBox4);
+            Controls.Add(PwCheckTextBox);
             Controls.Add(label4);
-            Controls.Add(textBox3);
+            Controls.Add(PwTextBox);
             Controls.Add(label3);
-            Controls.Add(textBox2);
+            Controls.Add(IdTextBox);
             Controls.Add(label2);
-            Controls.Add(textBox1);
+            Controls.Add(NameTextBox);
             Controls.Add(label1);
             Name = "Register";
             Text = "회원가입";
+            Load += Register_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -213,20 +225,20 @@
         #endregion
 
         private Label label1;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox NameTextBox;
+        private TextBox IdTextBox;
         private Label label2;
-        private TextBox textBox3;
+        private TextBox PwTextBox;
         private Label label3;
-        private TextBox textBox4;
+        private TextBox PwCheckTextBox;
         private Label label4;
         private Label label6;
         private Label label7;
         private Label label8;
         private Label label9;
-        private ComboBox comboBox1;
-        private ComboBox comboBox2;
-        private ComboBox comboBox3;
+        private ComboBox DayCombo;
         private Button button1;
+        private ComboBox MonthCombo;
+        private ComboBox YearCombo;
     }
 }

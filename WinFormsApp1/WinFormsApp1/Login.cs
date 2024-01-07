@@ -18,12 +18,15 @@ namespace WinFormsApp1
 
     public partial class Login : Form
     {
+
+        public delegate void LoginEventHandler();
+        public event LoginEventHandler LoginEvent;
         public Login()
         {
             InitializeComponent();
         }
 
-        string connectString = string.Format("Server={0};Database={1};Uid={2};Pwd={3};", "127.0.0.1", "sqler_test", "root", "1234");
+        string connectString = string.Format("Server={0};Database={1};Uid={2};Pwd={3};", "127.0.0.1", "sqler_test", "sa", "test1234");
         
 
         private void login_button_Click(object sender, EventArgs e)
@@ -34,17 +37,25 @@ namespace WinFormsApp1
                 var inputPw = textBox2.Text.ToString();
             if (!string.IsNullOrEmpty(inputId) && !string.IsNullOrEmpty(inputPw))
             {
-                using (SqlConnection conn = new SqlConnection(connectString))
+                try
                 {
-                    conn.Open();
-                    string commandstring= $"SELECT * FROM dbo.[user] WHERE u_id='{inputId}' AND u_pw ='{inputPw}'";
-                    var cmd = new SqlCommand(commandstring, conn);
-                    var rs = cmd.ExecuteReader();
-                    isValidAccount = rs.Read();
+                    using (SqlConnection conn = new SqlConnection(connectString))
+                    {
+                        conn.Open();
+                        string commandstring = $"SELECT * FROM dbo.[user] WHERE u_id='{inputId}' AND u_pw ='{inputPw}'";
+                        var cmd = new SqlCommand(commandstring, conn);
+                        var rs = cmd.ExecuteReader();
+                        isValidAccount = rs.Read();
+                    }
+                }catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
                 }
                 if (isValidAccount)
                 {
                     MessageBox.Show($"{inputId}님 환영합니다.","정보",MessageBoxButtons.OK,MessageBoxIcon.Information);
+
+                    this.LoginEvent();
                 }
                 else
                 {
@@ -58,6 +69,8 @@ namespace WinFormsApp1
             
         }
 
+        
+        
         private void assign_button_Click(object sender, EventArgs e)
         {
             Register register = new Register();
