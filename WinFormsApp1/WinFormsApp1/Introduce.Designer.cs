@@ -1,6 +1,6 @@
 ﻿namespace WinFormsApp1
 {
-    partial class introduce
+    partial class Introduce
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(introduce));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Introduce));
             panel1 = new Panel();
             pictureBox4 = new PictureBox();
             pictureBox3 = new PictureBox();
@@ -214,7 +214,7 @@
             label1.TabIndex = 0;
             label1.Text = "더코드 부평점";
             // 
-            // introduce
+            // Introduce
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -222,7 +222,7 @@
             Controls.Add(panel2);
             Controls.Add(button1);
             Controls.Add(panel1);
-            Name = "introduce";
+            Name = "Introduce";
             Text = "지점소개";
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();

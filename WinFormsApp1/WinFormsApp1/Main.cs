@@ -2,11 +2,12 @@ namespace WinFormsApp1
 {
     public partial class Main : Form
     {
-        Login login = new Login();
+        
+        bool isLogin = false;
         public Main()
         {
             InitializeComponent();
-            
+            Login login = new Login();
             login.LoginEvent += new Login.LoginEventHandler(OnLogin);
 
         }
@@ -20,7 +21,17 @@ namespace WinFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            login.Show();
+            if (isLogin)
+            {
+                OnLogOut();
+                isLogin = false;
+            }
+            else
+            {
+                Login login = new Login();
+                login.LoginEvent += new Login.LoginEventHandler(OnLogin);
+                login.Show();
+            }
         }
         private void button2_Click(object sender, EventArgs e)
         {
@@ -42,6 +53,15 @@ namespace WinFormsApp1
 
         }
 
+        public void OnLogOut()
+        {
+            login_button.Text = "로그인";
+            mypage_button.Enabled = false;
+            search_button.Enabled = false;
+            board_button.Enabled = false;
+            game_button.Enabled = false;
+            isLogin = false;
+        }
         public void OnLogin()
         {
             login_button.Text = "로그아웃";
@@ -49,7 +69,7 @@ namespace WinFormsApp1
             search_button.Enabled=true;
             board_button.Enabled=true;
             game_button.Enabled=true;
-
+            isLogin = true;
         }
     }
 }

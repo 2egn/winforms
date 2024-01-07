@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace WinFormsApp1
 {
+
     public partial class Register : Form
     {
 
@@ -23,7 +24,12 @@ namespace WinFormsApp1
             BaseComboItemAdd();
 
         }
-        string connectString = string.Format("Server={0};Database={1};Uid={2};Pwd={3};", "127.0.0.1", "sqler_test", "sa", "test1234");
+
+        static string server = "127.0.0.1";
+        static string database = "2024지방_1";
+        static string userid = "sa";
+        static string userpw = "test1234";
+        string connectString = $"Server={server};Database={database};Uid={userid};Pwd={userpw};";
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -82,6 +88,7 @@ namespace WinFormsApp1
                     isValidAccount = rs.Read();//true if ID exists, false otheriwse
                     MessageBox.Show($"{InputName}님 환영합니다", "정보", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     conn.Close();
+                    this.Close();
                 }
             }
             catch (Exception ex)
@@ -176,7 +183,7 @@ namespace WinFormsApp1
             }
         }
         private bool checkcommonletter(string idstring, string pwstring)
-        {
+        {//id와 pw에서 4자리 이상 공통된 글자 있을 때
             for(int i=0;i<idstring.Length-3;i++) {
                 string checkstring = idstring.Substring(i,4);
                 if(pwstring.Contains(checkstring))
@@ -188,4 +195,5 @@ namespace WinFormsApp1
         }
         
     }
+    
 }

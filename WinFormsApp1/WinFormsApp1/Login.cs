@@ -26,7 +26,11 @@ namespace WinFormsApp1
             InitializeComponent();
         }
 
-        string connectString = string.Format("Server={0};Database={1};Uid={2};Pwd={3};", "127.0.0.1", "sqler_test", "sa", "test1234");
+        static string server = "127.0.0.1";
+        static string database = "2024지방_1";
+        static string userid = "sa";
+        static string userpw = "test1234";
+        string connectString = $"Server={server};Database={database};Uid={userid};Pwd={userpw};";
         
 
         private void login_button_Click(object sender, EventArgs e)
@@ -56,6 +60,7 @@ namespace WinFormsApp1
                     MessageBox.Show($"{inputId}님 환영합니다.","정보",MessageBoxButtons.OK,MessageBoxIcon.Information);
 
                     this.LoginEvent();
+                    this.Close();
                 }
                 else
                 {
