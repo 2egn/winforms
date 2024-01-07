@@ -1,0 +1,1 @@
+﻿SELECT * FROM dbo.[user] WHERE u_id='test' AND u_pw ='test1234'

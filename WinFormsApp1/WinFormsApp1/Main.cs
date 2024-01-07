@@ -6,28 +6,7 @@ namespace WinFormsApp1
         {
             InitializeComponent();
             
-            Login login = new Login();
-            login.Show();
-            Register register = new Register();
-            register.Show();
-            MyPage mypage = new MyPage();
-            mypage.Show();
-            Search search = new Search();
-            search.Show();
-            introduce introduce = new introduce();
-            introduce.Show();
-            Board board = new Board();
-            board.Show();
-            Reservation reservation = new Reservation();
-            reservation.Show();
-            Assignment assignment = new Assignment();
-            assignment.Show();
-            GameList gameList = new GameList();
-            gameList.Show();
-            Quiz quiz = new Quiz();
-            quiz.Show();
-            ReservationChart reservationChart = new ReservationChart();
-            reservationChart.Show();
+            
 
         }
 
@@ -39,7 +18,8 @@ namespace WinFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            Login login = new Login();
+            login.Show();
         }
         private void button2_Click(object sender, EventArgs e)
         {

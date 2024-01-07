@@ -1,0 +1,1 @@
+﻿INSERT INTO dbo.[user] VALUES('{inputId}','{inputPw}','2egn',GETDATE()

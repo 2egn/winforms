@@ -33,15 +33,15 @@
             textBox1 = new TextBox();
             textBox2 = new TextBox();
             label3 = new Label();
-            button1 = new Button();
-            button2 = new Button();
+            login_button = new Button();
+            assign_button = new Button();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("맑은 고딕", 24F, FontStyle.Bold, GraphicsUnit.Point, 129);
-            label1.Location = new Point(66, 9);
+            label1.Location = new Point(74, 9);
             label1.Name = "label1";
             label1.Size = new Size(116, 45);
             label1.TabIndex = 0;
@@ -63,7 +63,6 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(157, 23);
             textBox1.TabIndex = 2;
-            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // textBox2
             // 
@@ -71,7 +70,6 @@
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(157, 23);
             textBox2.TabIndex = 4;
-            textBox2.TextChanged += textBox2_TextChanged;
             // 
             // label3
             // 
@@ -83,31 +81,33 @@
             label3.TabIndex = 3;
             label3.Text = "비밀번호";
             // 
-            // button1
+            // login_button
             // 
-            button1.Location = new Point(12, 169);
-            button1.Name = "button1";
-            button1.Size = new Size(111, 36);
-            button1.TabIndex = 5;
-            button1.Text = "로그인";
-            button1.UseVisualStyleBackColor = true;
+            login_button.Location = new Point(12, 169);
+            login_button.Name = "login_button";
+            login_button.Size = new Size(111, 36);
+            login_button.TabIndex = 5;
+            login_button.Text = "로그인";
+            login_button.UseVisualStyleBackColor = true;
+            login_button.Click += login_button_Click;
             // 
-            // button2
+            // assign_button
             // 
-            button2.Location = new Point(131, 169);
-            button2.Name = "button2";
-            button2.Size = new Size(111, 36);
-            button2.TabIndex = 6;
-            button2.Text = "회원가입";
-            button2.UseVisualStyleBackColor = true;
+            assign_button.Location = new Point(131, 169);
+            assign_button.Name = "assign_button";
+            assign_button.Size = new Size(111, 36);
+            assign_button.TabIndex = 6;
+            assign_button.Text = "회원가입";
+            assign_button.UseVisualStyleBackColor = true;
+            assign_button.Click += assign_button_Click;
             // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(263, 229);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(assign_button);
+            Controls.Add(login_button);
             Controls.Add(textBox2);
             Controls.Add(label3);
             Controls.Add(textBox1);
@@ -126,7 +126,7 @@
         private TextBox textBox1;
         private TextBox textBox2;
         private Label label3;
-        private Button button1;
-        private Button button2;
+        private Button login_button;
+        private Button assign_button;
     }
 }
