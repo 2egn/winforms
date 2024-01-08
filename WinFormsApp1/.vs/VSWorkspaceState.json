@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
+    "\\Setting",
     "\\WinFormsApp1"
   ],
-  "SelectedNode": "\\WinFormsApp1.sln",
+  "SelectedNode": "\\Setting\\Setting.cs",
   "PreviewInSolutionExplorer": false
 }
