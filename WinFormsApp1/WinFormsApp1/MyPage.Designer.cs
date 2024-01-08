@@ -59,6 +59,7 @@
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(61, 23);
             comboBox1.TabIndex = 1;
+            comboBox1.SelectedIndex = 0;
             // 
             // listView1
             // 
@@ -140,6 +141,7 @@
             Controls.Add(label1);
             Name = "MyPage";
             Text = "마이페이지";
+            FormClosing += MyPage_FormClosing;
             ResumeLayout(false);
             PerformLayout();
         }

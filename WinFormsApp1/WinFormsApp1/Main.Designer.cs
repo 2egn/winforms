@@ -37,8 +37,9 @@
             board_button = new Button();
             search_button = new Button();
             mypage_button = new Button();
-            pictureBox1 = new PictureBox();
+            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             label2 = new Label();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -127,17 +128,7 @@
             mypage_button.TabIndex = 7;
             mypage_button.Text = "마이페이지";
             mypage_button.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(34, 47);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(528, 162);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 8;
-            pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
+            mypage_button.Click += mypage_button_Click;
             // 
             // label2
             // 
@@ -149,6 +140,17 @@
             label2.TabIndex = 9;
             label2.Text = "고양이";
             label2.Click += label2_Click;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(34, 47);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(528, 162);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 8;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // Main
             // 
@@ -183,7 +185,8 @@
         private Button board_button;
         private Button search_button;
         private Button mypage_button;
-        private PictureBox pictureBox1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private Label label2;
+        private PictureBox pictureBox1;
     }
 }

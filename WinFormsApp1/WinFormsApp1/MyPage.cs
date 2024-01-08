@@ -12,14 +12,21 @@ namespace WinFormsApp1
 {
     public partial class MyPage : Form
     {
-        public MyPage()
+        private Form parentform;
+        public MyPage(Form parentForm)
         {
+            parentform = parentForm;
             InitializeComponent();
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void MyPage_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            parentform.Visible = true;
         }
     }
 }

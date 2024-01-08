@@ -9,10 +9,9 @@ namespace WinFormsApp1
 {
     internal class Configure
     {
-        public Configure() { 
+        public void Close() { 
             
         }
-        public partial class Main : Form { 
-        }
+        
     }
 }

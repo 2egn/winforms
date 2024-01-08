@@ -115,6 +115,7 @@
             Controls.Add(label1);
             Name = "Login";
             Text = "로그인";
+            FormClosing += Login_FormClosing;
             ResumeLayout(false);
             PerformLayout();
         }

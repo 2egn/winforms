@@ -2,16 +2,16 @@ namespace WinFormsApp1
 {
     public partial class Main : Form
     {
-        
+
         bool isLogin = false;
         public Main()
         {
             InitializeComponent();
-            Login login = new Login();
+            Login login = new();
             login.LoginEvent += new Login.LoginEventHandler(OnLogin);
 
         }
-        
+
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -20,7 +20,7 @@ namespace WinFormsApp1
 
 
         private void button1_Click(object sender, EventArgs e)
-        {
+        {//this button represents Login_Button
             if (isLogin)
             {
                 OnLogOut();
@@ -28,10 +28,17 @@ namespace WinFormsApp1
             }
             else
             {
-                Login login = new Login();
+                Login login = new(this);
                 login.LoginEvent += new Login.LoginEventHandler(OnLogin);
                 login.Show();
+                this.Visible = false;
             }
+        }
+        private void mypage_button_Click(object sender, EventArgs e)
+        {
+            MyPage mypage = new(this);           
+            mypage.Show();
+            this.Visible = false;
         }
         private void button2_Click(object sender, EventArgs e)
         {
@@ -66,10 +73,12 @@ namespace WinFormsApp1
         {
             login_button.Text = "·Î±×¾Æ¿ô";
             mypage_button.Enabled = true;
-            search_button.Enabled=true;
-            board_button.Enabled=true;
-            game_button.Enabled=true;
+            search_button.Enabled = true;
+            board_button.Enabled = true;
+            game_button.Enabled = true;
             isLogin = true;
         }
+
+        
     }
 }

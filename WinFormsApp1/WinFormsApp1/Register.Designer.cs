@@ -217,6 +217,7 @@
             Controls.Add(label1);
             Name = "Register";
             Text = "회원가입";
+            FormClosing += Register_FormClosing;
             Load += Register_Load;
             ResumeLayout(false);
             PerformLayout();
