@@ -29,7 +29,7 @@ namespace WinFormsApp1
         }
 
         static string server = "127.0.0.1";
-        static string database = "sqler_test";
+        static string database = "2024지방_1";
         static string userid = "sa";
         static string userpw = "test1234";
         string connectString = $"Server={server};Database={database};Uid={userid};Pwd={userpw};";
